@@ -27,7 +27,7 @@ CERT     = '/home/aleksart/openssl/sert.pem'
 CERT_KEY = '/home/aleksart/openssl/sert.key'
 
 print(TOKEN)
-print(test)
+print('test')
 bot = TelegramBot(TOKEN)
 app = Flask(__name__)
 context = (CERT, CERT_KEY)
