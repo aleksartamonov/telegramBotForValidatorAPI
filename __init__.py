@@ -36,7 +36,8 @@ context = (CERT, CERT_KEY)
 def hello():
     return 'Hello World!'
 
-@app.route('/bot'+TOKEN, methods=['POST'])
+
+@app.route('/'+TOKEN, methods=['POST'])
 def webhook():
     message = json.loads(request.data)
     if message['message']['text'] == '/ping':
@@ -50,10 +51,10 @@ def setWebhook():
     bot.set_webhook(url=webhook_url,
                    certificate=open(CERT, 'rb'))
     bot.update_bot_info().wait()
-    print(bot.username)
+    print(bot)
 
 if __name__ == '__main__':
-    setWebhook()
+    # setWebhook()
 
     app.run(host='0.0.0.0',
             port=PORT,
