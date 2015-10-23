@@ -45,6 +45,8 @@ def webhook():
 def setWebhook():
     bot.set_webhook(url='https://%s:%s/%s' % (HOST, PORT, TOKEN),
                    certificate=open(CERT, 'rb'))
+    bot.update_bot_info().wait()
+    print(bot.username)
 
 if __name__ == '__main__':
     setWebhook()
