@@ -17,7 +17,7 @@
 
 from flask import Flask, request
 from twx.botapi import TelegramBot, ReplyKeyboardMarkup
-
+import json
 
 # CONFIG
 TOKEN    = open("/home/aleksart/telegramBot/token").readline()
